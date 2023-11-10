@@ -17,7 +17,7 @@ export default function Bienvenido() {
           return <li key={index}>{element} </li>;
         })}
       </ul>
-      <Botones props={alerts}></Botones>
+      <Botones props='alerts'></Botones>
     </div>
   );
 }
