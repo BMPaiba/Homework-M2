@@ -1,33 +1,34 @@
 import Card from "./Card";
-
-export default function Cards({characters,onClose}) {
+import React from "react";
+export default function Cards({characters}) {
   return (
-    <div>
-      {characters.map(({id,name,status,species,gender,origin,image,onClose}, index) => {
-        return (
-          <Card 
-          key={index} 
-          name={name}
-          status={status}
-          species={species}
-          gender={gender}
-          origin= {origin.name}
-          image={image}
-          onClose={onClose}
-          > </Card>
-        );
-      })}
-        {/* {props.characters.map((user, index) => {
-        return (
-          <Card 
-          key={index} 
-          user={user}
-          > </Card>
-        );
-      })} */}
-    </div>
-  );
-}
-// {techSkills.map((element,index) => {
-//    return <li key={index}>{element} </li>;
-//  })}
+<div>
+  {characters.map((character) => {
+    return (
+      <Card
+      key={character.id}
+      id={character.id}
+      name={character.name}
+      status={character.status}
+      species={character.species}
+      gender={character.gender}
+      origin= {character.origin.name}
+      image={character.image}
+      onClose={() => window.alert('Emulamos que se cierra la card')}
+      > </Card>
+    );
+  })}
+  </div>)
+  }
+
+  // export default function Cards({ characters }) {
+  //   return (
+  //     <div>
+  //       {characters.map(character => (
+  //          <Card key={characters.id} {...characters} />
+  //       )
+  //     }
+  //     </div>
+  //   );
+  // }
+
